@@ -1,6 +1,11 @@
 #ifndef definitions_h
 #define definitions_h
 
+#include "FastLED.h"
+
+#define NUM_LEDS 12
+CRGB leds[NUM_LEDS];
+
 
 void PSI() {
   leds[0] = CRGB::White;
