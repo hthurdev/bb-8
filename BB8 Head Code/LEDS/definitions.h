@@ -11,6 +11,15 @@ void psiStatic() {
   leds[0] = CRGB::White;
 }
 
+void psiBlinkS1() {
+  leds[0] = CRGB::White;
+  FastLED.show();
+  delay(500); //change value acordingly
+  leds[0] = CRGB::Black;
+  FastLED.show();
+  delay(500); //change value acordingly
+}
+
 void hpStatic() {
   leds[1] = CRGB::Blue;
 }
