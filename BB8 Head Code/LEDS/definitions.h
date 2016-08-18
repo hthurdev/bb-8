@@ -7,31 +7,31 @@
 CRGB leds[NUM_LEDS];
 
 
-void PSI() {
+void psiStatic() {
   leds[0] = CRGB::White;
 }
 
-void HP() {
+void hpStatic() {
   leds[1] = CRGB::Blue;
 }
 
-void eye() {
+void eyeStatic() {
   leds[2] = CRGB::Red;
 }
 
-void logicOne() {
+void logicOneStatic() {
   leds[3] = CRGB::White;
   leds[4] = CRGB::White;
   leds[5] = CRGB::White;
 }
 
-void logicTwo() {
+void logicTwoStatic() {
   leds[6] = CRGB::Blue;
   leds[7] = CRGB::Blue;
   leds[8] = CRGB::Blue;
 }
 
-void logicThree() {
+void logicThreeStatic() {
   leds[9] = CRGB::Blue;
   leds[10] = CRGB::Blue;
   leds[11] = CRGB::Blue;
