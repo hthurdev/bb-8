@@ -1,5 +1,4 @@
 #include "FastLED.h"
-#include "definitions.h"
 
 int incomingByte = 0;
 

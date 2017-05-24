@@ -1,5 +1,6 @@
 #include "FastLED.h"
-#include "definitions.h"
+#include "lightDefinitions.h"
+#include "soundDefinitions.h"
 
 void setup() {
   FastLED.addLeds<WS2801, RGB>(leds, NUM_LEDS);

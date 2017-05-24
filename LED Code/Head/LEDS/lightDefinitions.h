@@ -1,5 +1,5 @@
-#ifndef definitions_h
-#define definitions_h
+#ifndef lightDefinitions_h
+#define lightDefinitions_h
 
 #include "FastLED.h"
 
