@@ -15,11 +15,11 @@ int button3state = 0;
 int button4state = 0;
 
 void angry() {
-  playcomplete("103.WAV")
+  playcomplete("angry.wav")
 }
 
 void giddy() {
-  playcomplete("104.WAV")
+  playcomplete("giddy.wav")
 }
 
 void happyStatic() {
