@@ -49,8 +49,8 @@ void logicThreeStatic() {
 
 
 void psiBOOP() {
-  leds[1] = CRGB: :Blue;
-  FastLED.show
+  leds[1] = CRGB::Blue;
+  FastLED.show();
   delay(1000)
  
 
