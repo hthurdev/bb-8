@@ -17,7 +17,7 @@ void loop() {
   if (Serial.available() > 0) {
       incomingByte = Serial.read();
         if (incomingByte == s1) {
-          //
+          psiBOOP;
         }
         else if (incomingByte == s2) {
           //
