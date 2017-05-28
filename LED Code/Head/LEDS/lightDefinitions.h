@@ -65,9 +65,6 @@ void logicThreeStatic() {
 
 //AUDIO LIGHT DEFINITIONS
 void psiAngry() {
-  leds[1] = CRGB::Blue;
-  FastLED.show();
-  delay(1000)
 }
 
 void psiGiddy() {

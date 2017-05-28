@@ -77,19 +77,19 @@ void loop() {
 
   if (Serial.available() > 0) {
       incomingByte = Serial.read();
-        if (incomingByte == s1) {
+        if (incomingByte == "a") {
           //
         }
-          else if (incomingByte == s2) {
+          else if (incomingByte == "b") {
           //
           }
-          else if () {
+          else if (incomingByte == "c") {
           //
           }
-          else if () {
+          else if (incomingByte == "d") {
           //
           }
-          else if () {
+          else if (incomingByte == "e") {
           //
           }
         }
