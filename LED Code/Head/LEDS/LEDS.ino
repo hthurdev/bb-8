@@ -6,6 +6,10 @@
 #include "lightDefinitions.h"
 
 int incomingByte = 0;
+SdReader card;    // This object holds the information for the card
+FatVolume vol;    // This holds the information for the partition on the card
+FatReader root;   // This holds the information for the filesystem on the card
+FatReader f;      // This holds the information for the file we're play
 
 void setup() {
   FastLED.addLeds<WS2801, RGB>(leds, NUM_LEDS);
