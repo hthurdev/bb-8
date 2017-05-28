@@ -78,18 +78,23 @@ void loop() {
   if (Serial.available() > 0) {
       incomingByte = Serial.read();
         if (incomingByte == s1) {
-          psiBOOP;
-        }
-        else if (incomingByte == s2) {
           //
         }
+          else if (incomingByte == s2) {
+          //
+          }
+          else if () {
+          //
+          }
+          else if () {
+          //
+          }
+          else if () {
+          //
+          }
+        }
         else {
-          psiStatic();
-          hpStatic();
-          eyeStatic);
-          logicOneStatic();
-          logicTwoStatic();
-          logicThreeStatic();
+          allOn();
         }
   }
  
