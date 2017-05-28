@@ -14,8 +14,24 @@ int button2state = 0;
 int button3state = 0;
 int button4state = 0;
 
-void sndBOOP()
-playcomplete("103.WAV")
+void angry() {
+  playcomplete("103.WAV")
+}
 
+void giddy() {
+  playcomplete("104.WAV")
+}
+
+void happyStatic() {
+  playcomplete("happyStatic.wav")
+}
+
+void yes() {
+  playcomplete("yes.wav")  
+}
+
+void yahoo() {
+  playcomplete("yahoo.wav")  
+}
   
 #endif
