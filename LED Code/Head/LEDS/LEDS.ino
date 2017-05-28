@@ -1,4 +1,9 @@
 #include "FastLED.h"
+#include <FatReader.h>
+#include <SdReader.h>
+#include "waveUtil.h"
+#include "WaveHC.h"
+#include "lightDefinitions.h"
 
 int incomingByte = 0;
 
