@@ -12,8 +12,8 @@ void setup() {
   FastLED.addLeds<WS2801, RGB>(leds, NUM_LEDS);
   Serial.begin(9600);
   
-  Serial.print("Free RAM: ");       // This can help with debugging, running out of RAM is bad
-  Serial.println(freeRam());      // if this is under 150 bytes it may spell trouble!
+  putstring("Free RAM: ");       // This can help with debugging, running out of RAM is bad
+  putstring_nl(freeRam());      // if this is under 150 bytes it may spell trouble!
   
   // Set the output pins for the DAC control. This pins are defined in the library
   pinMode(2, OUTPUT);
@@ -62,12 +62,12 @@ void setup() {
   
   // Try to open the root directory
   if (!root.openRoot(vol)) {
-    putstring_nl("Can't open root dir!"); // Something went wrong,
+    Serial.println("Can't open root dir!"); // Something went wrong,
     while(1);                             // then 'halt' - do nothing!
   }
   
   // Whew! We got past the tough parts.
-  putstring_nl("Ready!");
+  Serial.println("Ready!");
   dirLevel = 0;
 }
 
