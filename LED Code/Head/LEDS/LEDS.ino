@@ -12,8 +12,6 @@ void setup() {
   FastLED.addLeds<WS2801, RGB>(leds, NUM_LEDS);
   Serial.begin(9600);
   
-putstring_nl("WaveHC with 6 buttons");
-  
    putstring("Free RAM: ");       // This can help with debugging, running out of RAM is bad
   Serial.println(freeRam());      // if this is under 150 bytes it may spell trouble!
   
