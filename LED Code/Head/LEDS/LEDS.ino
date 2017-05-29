@@ -1,6 +1,7 @@
 #include <FatReader.h>
 #include <SdReader.h>
 #include "lightDefinitions.h"
+#include "FastLed-3.1.3.h"
 
 #include <avr/pgmspace.h>
 #include "WaveUtil.h"
@@ -8,11 +9,31 @@
 #include <EEPROM.h>
 #include <SoftwareSerial.h>
 
+
 int incomingByte = 0;
 SdReader card;    // This object holds the information for the card
 FatVolume vol;    // This holds the information for the partition on the card
 FatReader root;   // This holds the information for the filesystem on the card
 FatReader f;      // This holds the information for the file we're play
+
+uint8_t dirLevel; // indent level for file/dir names    (for prettyprinting)
+
+
+
+
+void sdErrorCheck(void)
+{
+  if (!card.errorCode()) return;
+  PgmPrint("\r\nSD I/O error: ");
+  Serial.print(card.errorCode(), HEX);
+  PgmPrint(", ");
+  Serial.println(card.errorData(), HEX);
+  while(1);
+}
+
+
+
+
 
 void setup() {
   FastLED.addLeds<WS2801, RGB>(leds, NUM_LEDS);
