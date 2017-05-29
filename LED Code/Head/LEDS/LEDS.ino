@@ -9,6 +9,7 @@
 #include <EEPROM.h>
 #include <SoftwareSerial.h>
 
+SoftwareSerial mySerial(14, 15); // RX, TX
 
 int incomingByte = 0;
 SdReader card;    // This object holds the information for the card
@@ -38,6 +39,7 @@ void sdErrorCheck(void)
 void setup() {
   FastLED.addLeds<WS2801, RGB>(leds, NUM_LEDS);
   Serial.begin(9600);
+  myserial.begin(9600);
   
  // putstring("Free RAM: ");       // This can help with debugging, running out of RAM is bad
  // putstring_nl(freeRam());      // if this is under 150 bytes it may spell trouble!
@@ -51,13 +53,6 @@ void setup() {
   // pin13 LED
   pinMode(13, OUTPUT);
  
-  // enable pull-up resistors on switch pins (analog inputs)
-  digitalWrite(14, HIGH);
-  digitalWrite(15, HIGH);
-  digitalWrite(16, HIGH);
-  digitalWrite(17, HIGH);
-  digitalWrite(18, HIGH);
-  digitalWrite(19, HIGH);
  
   //  if (!card.init(true)) { //play with 4 MHz spi if 8MHz isn't working for you
   if (!card.init()) {         //play with 8 MHz spi (default faster!)  
