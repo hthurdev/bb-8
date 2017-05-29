@@ -1,7 +1,7 @@
 #include <FatReader.h>
 #include <SdReader.h>
 #include "lightDefinitions.h"
-#include "FastLed-3.1.3.h"
+#include "FastLED.h"
 
 #include <avr/pgmspace.h>
 #include "WaveUtil.h"
@@ -121,7 +121,5 @@ void loop() {
         else {
           allOn();
         }
+    FastLED.show();
   }
- 
-  FastLED.show();
-}
