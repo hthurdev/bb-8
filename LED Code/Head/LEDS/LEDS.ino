@@ -2,6 +2,12 @@
 #include <SdReader.h>
 #include "lightDefinitions.h"
 
+#include <avr/pgmspace.h>
+#include "WaveUtil.h"
+#include "WaveHC.h"
+#include <EEPROM.h>
+#include <SoftwareSerial.h>
+
 int incomingByte = 0;
 SdReader card;    // This object holds the information for the card
 FatVolume vol;    // This holds the information for the partition on the card
