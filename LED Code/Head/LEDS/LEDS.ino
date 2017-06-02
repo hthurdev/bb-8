@@ -9,7 +9,7 @@
 #include <EEPROM.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(14, 15); // RX, TX
+//SoftwareSerial mySerial(14, 15); // RX, TX
 
 int incomingByte = 0;
 SdReader card;    // This object holds the information for the card
@@ -39,7 +39,7 @@ void sdErrorCheck(void)
 void setup() {
   FastLED.addLeds<WS2801, RGB>(leds, NUM_LEDS);
   Serial.begin(9600);
-  myserial.begin(9600);
+ // myserial.begin(9600);
   
  // putstring("Free RAM: ");       // This can help with debugging, running out of RAM is bad
  // putstring_nl(freeRam());      // if this is under 150 bytes it may spell trouble!
