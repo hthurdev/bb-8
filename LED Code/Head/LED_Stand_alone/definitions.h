@@ -47,4 +47,17 @@ void logicThreeStatic() {
   leds[12] = CRGB::Blue;
 }
 
+void allLogics() {
+  leds[3] = CRGB::White;
+  leds[4] = CRGB::White;
+  leds[5] = CRGB::White;
+  leds[6] = CRGB::White;
+  leds[7] = CRGB::White;
+  leds[8] = CRGB::White;
+  leds[9] = CRGB::White;
+  leds[10] = CRGB::White;
+  leds[11] = CRGB::White;
+  leds[12] = CRGB::White;
+}
+
 #endif

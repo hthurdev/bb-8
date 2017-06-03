@@ -1,4 +1,3 @@
-#include "FastLED.h"
 #include "definitions.h"
 
 void setup() {
@@ -7,6 +6,12 @@ void setup() {
 }
 
 void loop() {
+  psiStatic();
+  hpStatic();
+  eyeStatic();
+  logicOneStatic();
+
+  
  leds[0] = CRGB::Blue;
  leds[1] = CRGB::White;
  leds[2] = CRGB::Red;
