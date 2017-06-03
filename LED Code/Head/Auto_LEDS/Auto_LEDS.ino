@@ -1,21 +1,20 @@
 #include <FatReader.h>
 #include <SdReader.h>
 #include "lightDefinitions.h"
+#include "soundDefinitions.h"
 #include "FastLED.h"
 
 #include <avr/pgmspace.h>
-#include "WaveUtil.h"
-#include "WaveHC.h"
+#include <WaveHC.h>
+#include <Wavemainpage.h>
+#include <WavePinDefs.h>
+#include <WaveUtil.h>
 #include <EEPROM.h>
 #include <SoftwareSerial.h>
 
 //SoftwareSerial mySerial(14, 15); // RX, TX
 
 int incomingByte = 0;
-SdReader card;    // This object holds the information for the card
-FatVolume vol;    // This holds the information for the partition on the card
-FatReader root;   // This holds the information for the filesystem on the card
-FatReader f;      // This holds the information for the file we're play
 
 uint8_t dirLevel; // indent level for file/dir names    (for prettyprinting)
 
