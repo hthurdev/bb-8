@@ -111,5 +111,33 @@ void loop() {
         else {
           allOn();
         }*/
+
+    giddy();
+    delay(180000);
+    happyStatic();
+    delay(180000);
+    yes();
+    delay(180000);
+    yahoo();
+    delay(180000);
+    waggle();
+    delay(180000);
+    upset();
+    delay(180000);
+    readyy();
+    delay(180000);
+    proximity();
+    delay(180000);
+    headturn();
+    delay(180000);
+    newFirmware();
+    delay(180000);
+    poke();
+    delay(180000);
+    firmware();
+    delay(180000);
+    yahoo();
+    delay(180000);
+    
     FastLED.show();
   }

@@ -33,5 +33,36 @@ void yes() {
 void yahoo() {
   playcomplete("yahoo.wav")  
 }
-  
+void firmware() {
+  playcomplete("firmware.wav")
+}
+
+void headturn() {
+  playcomplete("headturn.wav")
+}
+
+void poke() {
+  playcomplete("poke.wav")
+}
+
+void newFirmware() {
+  playcomplete("newFirmware.wav")
+}
+
+void proximity() {
+  playcomplete("proximity.wav")
+}
+
+void readyy() {
+  playcomplete("readyy.wav")
+}
+
+void upset() {
+  playcomplete("upset.wav")
+}
+
+void waggle() {
+  playcomplete("waggle.wav")
+}
+
 #endif
