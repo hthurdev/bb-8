@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.enarch.bb8.MainActivity" >
+
+    <item
+        android:id="@+id/secure_connect_scan"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:title="Connect"/>
+
+    <item
+        android:id="@+id/insecure_connect_scan"
+        android:orderInCategory="300"
+        android:showAsAction="never"
+        android:title="Disconnect"/>
+
+    <item
+        android:id="@+id/discoverable"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Make Discoverable"/>
+
+    <item
+        android:id="@+id/devicesAvalable"
+        android:orderInCategory="500"
+        android:showAsAction="never"
+        android:title="Devices Avalable" />
+    
+</menu>
