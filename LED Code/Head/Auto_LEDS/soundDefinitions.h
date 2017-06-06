@@ -17,7 +17,30 @@ FatVolume vol;
 FatReader root;
 FatReader file;
 
-void playcomplete(char *name);
+void playcomplete(char *name) {
+  //call out helper to find and play this name
+  playfile(name);
+  while (wave.isplaying) {
+    //do nothing  
+  }
+    //now done playing
+}
+
+void playfile(char *name) {
+  if (wave.isplaying) {
+    //already playing something, so stop it!
+      wave.stop();
+  }
+  //look in root directory and open the file
+  if (!f.open(root, name)) {
+    putstring("Couldn't Open File"); Serial.print(name); return;
+  }
+  if (!wave.create(f)) {
+    putstring_nl("Not a valid WAV"); return;
+  }
+
+  wave.play();
+}
 
 int button1 = 1;
 int button2 = 2;
