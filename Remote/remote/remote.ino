@@ -8,16 +8,7 @@ int PinSixBtn = 6 ;
 int PinSevenBtn = 7 ;
 int PinEightBtn = 8 ;
 int PinNineBtn = 9 ;
-int InputZero = 0 ;
-int InputOne = 0 ;
-int InputTwo = 0 ;
-int InputThree = 0 ;
-int InputFour = 0 ;
-int InputFive = 0 ;
-int InputSix = 0 ;
-int InputSeven = 0 ;
-int InputEight = 0 ; 
-int InputNine = 0 ;
+
 
 void setup() {
   Serial.begin(9600) ;
@@ -34,54 +25,47 @@ pinMode(PinNineBtn, INPUT) ;
 }
 
 void loop() {
-InputZero = digitalRead(PinNullBtn) ;
-InputOne = digitalRead(PinOneBtn) ;
-InputTwo = digitalRead(PinTwoBtn) ;
-InputThree = digitalRead(PinThreeBtn) ;
-InputFour = digitalRead(PinFourBtn) ;
-InputFive = digitalRead(PinFiveBtn) ;
-InputSix = digitalRead(PinSixBtn) ;
-InputSeven = digitalRead(PinSevenBtn) ;
-InputEight = digitalRead(PinEightBtn) ;
-InputNine = digitalRead(PinNineBtn) ;
+  
 
-if ( InputZero= "HIGH" )
+
+if ( digitalRead(PinNullBtn)= "HIGH" )
 {
   Serial.println("a") ; 
 } 
-else if ( InputTwo = "HIGH" )
+else if (   digitalRead(PinOneBtn) = "HIGH" )
 { 
   Serial.println("b") ;
 }
-else if ( InputOne = "HIGH" )
+else if (  digitalRead(PinTwoBtn) = "HIGH" )
 { 
   Serial.println("c") ;
 }
-else if ( InputThree = "HIGH" )
+else if (   digitalRead(PinThreeBtn) = "HIGH" )
 { 
   Serial.println("d") ;
 }
-else if ( InputFour = "HIGH" )
+else if (  digitalRead(PinFourBtn)
+ = "HIGH" )
 { 
   Serial.println("e") ;
 }
-else if ( InputFive = "HIGH" )
+else if ( digitalRead(PinFiveBtn = "HIGH" )
 { 
   Serial.println("f") ;
 }
-else if ( InputSix = "HIGH" )
+else if ( digitalRead(PinSixBtn = "HIGH" )
 { 
   Serial.println("g") ;
 }
-else if ( InputSeven = "HIGH" )
+else if ( PinSevenBtn = "HIGH" )
 { 
   Serial.println("h") ;
 }
-else if ( InputEight = "HIGH" )
+else if ( PinEightBtn = "HIGH" )
 { 
   Serial.println("i") ;
 }
-else if ( InputNine = "HIGH" )
+else if ( PinNineBtn = "HIGH" )
 { 
   Serial.println("j") ;
 }
