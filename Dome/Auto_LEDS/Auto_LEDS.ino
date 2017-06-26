@@ -88,7 +88,7 @@ void setup() {
 }
 
 void loop() {
-
+  eyeStatic();
   /*if (Serial.available() > 0) {
       incomingByte = Serial.read();
         if (incomingByte == "a") {
@@ -111,13 +111,15 @@ void loop() {
           allOn();
         }*/
 
-    giddy();
+    /*giddy();
     delay(180000);
     happyStatic();
-    delay(180000);
+    delay(180000);*/
     yes();
-    delay(180000);
-    yahoo();
+    Serial.print("Playing Yes...");
+    delay(300);
+    //delay(180000);
+    /*yahoo();
     delay(180000);
     waggle();
     delay(180000);
@@ -136,7 +138,7 @@ void loop() {
     firmware();
     delay(180000);
     yahoo();
-    delay(180000);
+    delay(180000);*/
     
     FastLED.show();
   }

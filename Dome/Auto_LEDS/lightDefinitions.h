@@ -28,20 +28,12 @@ void allOn() {
 }
 
 void psiStatic() {
-  leds[0] = CRGB::White;
-}
-
-void psiBlinkS1() {
-  leds[0] = CRGB::White;
-  FastLED.show();
-  delay(500); //change value acordingly
-  leds[0] = CRGB::Black;
-  FastLED.show();
-  delay(500); //change value acordingly
+  //leds[0] = CRGB::White;
+  leds[1] = CRGB::Black;
 }
 
 void hpStatic() {
-  leds[1] = CRGB::Blue;
+  leds[0] = CRGB::Blue;
 }
 
 void eyeStatic() {
@@ -64,11 +56,14 @@ void logicThreeStatic() {
   leds[9] = CRGB::Blue;
   leds[10] = CRGB::Blue;
   leds[11] = CRGB::Blue;
-  leds[12] = CRGB::Blue;
 }
 
 //AUDIO LIGHT DEFINITIONS
 void psiAngry() {
+  leds[01] = CRGB::White;
+  delay(500);
+  leds[0] = CRGB::Black;
+  delay(500);
 }
 
 void psiGiddy() {
@@ -81,6 +76,16 @@ void psiYahoo() {
 }
 
 void psiYes() {
+  delay(1010);
+  leds[1] = CRGB::White;
+  leds[1] = CRGB::Black;
+  delay(400);
+  leds[1] = CRGB::White;
+  leds[1] = CRGB::Black;
+  delay(260);
+  leds[1] = CRGB::White;
+  leds[1] = CRGB::Black;
+  delay(600);
 }
 
 

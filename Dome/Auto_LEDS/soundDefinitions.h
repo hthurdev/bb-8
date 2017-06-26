@@ -67,6 +67,7 @@ void happyStatic() {
 
 void yes() {
   playcomplete("yes.wav");
+  psiYes();
 }
 
 void yahoo() {
