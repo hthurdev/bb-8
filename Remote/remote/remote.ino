@@ -9,7 +9,6 @@ int PinSevenBtn = 7 ;
 int PinEightBtn = 8 ;
 int PinNineBtn = 9 ;
 
-
 void setup() {
   Serial.begin(9600) ;
 pinMode(PinNullBtn, INPUT) ;
@@ -26,8 +25,6 @@ pinMode(PinNineBtn, INPUT) ;
 
 void loop() {
   
-
-
 if ( digitalRead(PinNullBtn)= "HIGH" )
 {
   Serial.println("a") ; 
