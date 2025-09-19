@@ -16,12 +16,30 @@ pca = PCA9685(i2c)
 pca.frequency = 50  # 50Hz for servos
 
 ### Testing Control Area ###
-#enable ONLY ONE boolean for what you want to test
 DC_drive_motors_test=False
 swing_servo_test=False
-head_servo_test=True
+head_servo_test=False
 RestAllServos=False
 ############################
+choice_not_made=True
+while choice_not_made:
+	test_choice = input("What would you like to test? (Input the corresponding number)\nDC Motors - 1\nSwing Servos - 2\nHead Positioning Servos - 3\nNone, just rest the servos - 4\n")
+	
+	match test_choice:
+		case "1":
+			DC_drive_motors_test=True
+			choice_not_made=False
+		case "2":
+			swing_servo_test=True
+			choice_not_made=False
+		case "3":
+			head_servo_test=True
+			choice_not_made=False
+		case "4":
+			RestAllServos=True
+			choice_not_made=False
+		case _:
+			print("\nImproper Number, choose again\n")
 
 ### DC Motors and Driver Relay Definitions ###
 DC_motor1 = PWMOutputDevice(13, initial_value=0.5, frequency=10000)
@@ -71,25 +89,28 @@ def set_swing(degrees): #rolling straight is 90
 		swing_servo.angle = 90 + difference
 		swing_servo2.angle = 90 - difference
 	else:
-		print("swing out of range: max 115 minimum 70")
-#used for testing to "disable" servos who may be retaining their previous position
-
+		raise ValueError(f"swing: {degrees} requested which is out of range. Range 70-125")
+		
 def set_head_fb(degrees):
 	#center: 105
-	if 65<=degrees+15<=150:
+	#90=105
+	#degrees+15 = turn angle
+	if 55<=degrees<=125:
 		head_fb.angle = degrees+15;
 	else:
-		print("head_fb can't go out of range")
+		raise ValueError(f"head_fb: {degrees} requested which is out of range. Range 55-125")
 
 def set_head_sts(degrees):
 	#center: 95
-	if 45<=degrees+5<=145:
+	if 40<=degrees<=140:
 		head_sts.angle = degrees+5;
 	else:
-		print("head_sts can't go out of range")
+		raise ValueError(f"head_sts: {degrees} requested which is out of range. Range 40-140")
 
 
 servo_floppy = [False] * 16  # up to 16 channels
+
+#used for testing to "disable" servos who may be retaining their previous position
 
 def set_servo_floppy(channel, floppy=True):
 	
@@ -146,7 +167,7 @@ while True:
 	try:
 		if DC_drive_motors_test:
 			time.sleep(2)
-			print("reverse motors")
+			
 			DC_motor1.value = 0.6
 			DC_motor2.value = 0.6
 												
@@ -168,7 +189,6 @@ while True:
 		if swing_servo_test:
 			# Quick Servo Test swings it back and forth
 
-
 			set_swing(70) 
 			time.sleep(2)
 			set_swing(117)
@@ -182,17 +202,17 @@ while True:
 			time.sleep(1)
 
 			# Range test forward-backwards
-			set_head_fb(65)
+			set_head_fb(55)
 			time.sleep(2)
-			set_head_fb(150)
+			set_head_fb(125)
 			time.sleep(2)
 			set_head_fb(90)
 			time.sleep(1)
 
 			# Range test side to side
-			set_head_sts(45)
+			set_head_sts(40) 
 			time.sleep(2)
-			set_head_sts(145)
+			set_head_sts(140)
 			time.sleep(2)
 			set_head_sts(90)
 			time.sleep(1)
@@ -210,10 +230,7 @@ while True:
 			
 			time.sleep(2)
 			
-		
-			
-		
-	except KeyboardInterrupt:
+	except (KeyboardInterrupt, ValueError) as E:
 		
 		#this sets the speed of the motors to 0 and turns off the relay.
 		DC_motor2.value = 0.5
@@ -221,8 +238,13 @@ while True:
 		
 		motor_driver_relay.off()
 		rest_all_servos()
-		print("Exiting")
-		time.sleep(2)
-		exit()
-
+		
+		if type(E) is KeyboardInterrupt:
+			print("\nKeyboardInterrupt detected, exiting")
+			time.sleep(2)
+			exit()
+		else:	
+			print(E)
+			print("\nExiting in 10 seconds")
+			time.sleep(10)
 
