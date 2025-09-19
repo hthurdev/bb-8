@@ -3,7 +3,7 @@ from gpiozero import OutputDevice
 import time
 
 
-relay = OutputDevice(17)
+relay = OutputDevice(17, active_high=False)
 while True:
 	
 	# This tests the relay that controls the DC motor driver. I deemed a relay 
@@ -16,7 +16,7 @@ while True:
 	relay.on()
 	print("Relay on")
 	time.sleep(5)
-	relay.on()
+	relay.off()
 	print("Relay off")
 	time.sleep(5)
 	
