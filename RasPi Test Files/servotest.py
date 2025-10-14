@@ -44,7 +44,9 @@ while choice_not_made:
 ### DC Motors and Driver Relay Definitions ###
 DC_motor1 = PWMOutputDevice(13, initial_value=0.5, frequency=10000)
 DC_motor2 = PWMOutputDevice(18, initial_value=0.5, frequency=10000)
+Turn_motor = PWMOutputDevice(19, initial_value=0.5, frequency=10000)
 motor_driver_relay = OutputDevice(17, active_high=False)
+turn_driver_relay = OutputDevice(27, active_high=False)
 ##################################
 
 ### Gyro Definitions ###
@@ -68,6 +70,7 @@ print("TO CANCEL, USE CTRL+C, DONT CLOSE THE TAB")
 print("Waiting 2 secs")
 time.sleep(2)
 motor_driver_relay.on()
+turn_driver_relay.on()
 
 ### quality of life servo functions ###
 def easy_turn(servo, angle, timeperdegree):
@@ -186,6 +189,22 @@ while True:
 			DC_motor1.value = 0.5
 			DC_motor2.value = 0.5
 			
+			time.sleep(2)
+			
+			Turn_motor.value = 1
+			
+			time.sleep(2)
+			
+			Turn_motor.value = 0.5
+			
+			time.sleep(2)
+			
+			Turn_motor.value = 0
+			
+			time.sleep(2)
+			
+			Turn_motor.value = 0.5
+			
 		if swing_servo_test:
 			# Quick Servo Test swings it back and forth
 
@@ -237,6 +256,7 @@ while True:
 		DC_motor1.value = 0.5
 		
 		motor_driver_relay.off()
+		turn_driver_relay.off()
 		rest_all_servos()
 		
 		if type(E) is KeyboardInterrupt:
